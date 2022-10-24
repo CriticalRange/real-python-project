@@ -39,4 +39,4 @@ jobs:
         run: p4a clean_all
         
       - name: Setup Python for Android
-        run: p4a apk --private $HOME --package=com.ahmetkosgen.ahmet --name "Ahmet" --version 0.1 --bootstrap=sdl2 --requirements=python3,kivy
+        run: p4a apk --arch arm64-v8a --private $HOME --package=com.ahmetkosgen.ahmet --name "Ahmet" --version 0.1 --bootstrap=sdl2 --requirements=python3,kivy
