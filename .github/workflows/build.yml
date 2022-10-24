@@ -3,8 +3,8 @@ name: Unit tests & build apps
 on: ['push', 'pull_request']
 
 steps:
-    uses: actions/checkout@v2
-  - uses: nttld/setup-ndk@v1
+  - uses: actions/checkout@v2
+    uses: nttld/setup-ndk@v1
     id: setup-ndk
     with:
       ndk-version: r21e
