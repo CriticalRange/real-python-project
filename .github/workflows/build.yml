@@ -23,7 +23,7 @@ jobs:
           packages: |
             platforms;android-27
             build-tools;28.0.2
-            ndk;r23b
+            ndk;25.1.8937393
       - name: Setting up Python      
         uses: actions/setup-python@v4
         with:
