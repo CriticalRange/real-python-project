@@ -22,3 +22,21 @@ jobs:
           packages: |
             platforms;android-27
             build-tools;28.0.2
+            ndk;r23b
+            
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+        run: pip install python-for-android
+        
+      - name: Install Dependencies
+        run: sudo dpkg --add-architecture i386 && sudo apt-get update && sudo apt-get install -y build-essential ccache git zlib1g-dev python3 python3-dev libncurses5:i386 libstdc++6:i386 zlib1g:i386 openjdk-8-jdk unzip ant ccache autoconf libtool libssl-dev
+        
+      - name: Install Python for Android
+        run: pip install python-for-android
+        
+      - name: Clean caches from older p4a
+        run: p4a clean_all
+        
+      - name: Setup Python for Android
+        run: p4a apk --private $HOME --package=com.ahmetkosgen.ahmet --name "Ahmet" --version 0.1 --bootstrap=sdl2 --requirements=python3,kivy
